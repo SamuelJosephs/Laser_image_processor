@@ -14,7 +14,7 @@ fn main() {
         panic!("Must provide File, RValue options then output file name");
     }
     
-    let output_file_name = args[2].clone();
+    let output_file_name = args[3].clone();
     
 
     let file_path = args[1].clone();
