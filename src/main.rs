@@ -11,7 +11,7 @@ fn main() {
     
     let args = env::args().collect::<Vec<String>>();
     if args.len() < 2 {
-        panic!("Must provide -File and -RValue options");
+        panic!("Must provide File then RValue options");
     }
     let mut file_path: String = String::with_capacity(100);
     let mut RValue: u8 = 0;
