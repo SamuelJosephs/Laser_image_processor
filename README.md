@@ -9,3 +9,6 @@ Input image:
 
 Output image:
 ![test_output](Images/graph)
+
+The results are written to Results.csv.
+The graph was plotted with gnuplot.
