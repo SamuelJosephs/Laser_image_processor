@@ -4,8 +4,24 @@ fn main() {
     use std::fs::*;
     use std::io::LineWriter;
     use std::io::Write;
+    use std::env;
+
+
+    // setup
     
-    let img = ImageReader::open("/home/samuel/Documents/rli/image_processor/Images/test.jpeg").expect("Failed to open file").decode();
+    let args = env::args().collect::<Vec<String>>();
+    if args.len() < 2 {
+        panic!("Must provide -File and -RValue options");
+    }
+    let mut file_path: String = String::with_capacity(100);
+    let mut RValue: u8 = 0;
+    
+
+    file_path = args[1].clone();
+    RValue = args[2].parse::<u8>().expect("Not a valid number");
+
+
+    let img = ImageReader::open(file_path).expect("Failed to open file").decode();
 
     let (width, height) = img.as_ref().unwrap().dimensions();
     println!("width = {}, height = {}",width,height);
@@ -17,7 +33,7 @@ fn main() {
             let pix = img.as_ref().unwrap().get_pixel(x,y);
             let channels = pix.0;
 
-            if channels[0] > 160 {
+            if channels[0] > RValue {
                 let coord = (x,height - y);
                 coordinates.push(coord);
                 continue 'label;    
