@@ -10,16 +10,16 @@ fn main() {
     // setup
     
     let args = env::args().collect::<Vec<String>>();
-    if args.len() < 2 {
-        panic!("Must provide File then RValue options");
+    if args.len() < 3 {
+        panic!("Must provide File, RValue options then output file name");
     }
-    let mut file_path: String = String::with_capacity(100);
-    let mut RValue: u8 = 0;
+    
+    let output_file_name = args[2].clone();
     
 
-    file_path = args[1].clone();
-    RValue = args[2].parse::<u8>().expect("Not a valid number");
-
+    let file_path = args[1].clone();
+    let RValue = args[2].parse::<u8>().expect("Not a valid number");
+    let output_file_name = args[2].clone();
 
     let img = ImageReader::open(file_path).expect("Failed to open file").decode();
 
@@ -46,7 +46,7 @@ fn main() {
 
  
 
-    let file = File::create("Results.csv").expect("Failed to open file");
+    let file = File::create(output_file_name).expect("Failed to open file");
     let mut file_write = LineWriter::new(file);
     for coord in coordinates {
        let x = coord.0;
