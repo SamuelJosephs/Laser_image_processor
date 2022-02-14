@@ -14,12 +14,12 @@ fn main() {
         panic!("Must provide File, RValue options then output file name");
     }
     
-    let output_file_name = args[3].clone();
+    
     
 
     let file_path = args[1].clone();
     let RValue = args[2].parse::<u8>().expect("Not a valid number");
-    let output_file_name = args[2].clone();
+    let output_file_name = args[3].clone();
 
     let img = ImageReader::open(file_path).expect("Failed to open file").decode();
 
