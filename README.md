@@ -8,4 +8,4 @@ Input image:
 ![test](Images/test.jpeg)
 
 Output image:
-![test_output](Images/output)
+![test_output](Images/graph)
