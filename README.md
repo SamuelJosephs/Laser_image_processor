@@ -24,6 +24,8 @@ Clone the directory using git then run `cargo build --release'
 Then add /target/release to path in your ~/.profile 
 
 
-##How to use
+## How to use
 
 run the following command in a terminal: `image_processor --image-file-name <IMAGE_FILE_NAME> --r-value <R_VALUE> --output-file-name <OUTPUT_FILE_NAME>`
+
+The results will be written to OUTPUT_FILE_NAME where the first column is the x corrdinates and the y column lists the y coordinates.
