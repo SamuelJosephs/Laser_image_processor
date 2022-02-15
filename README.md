@@ -20,7 +20,7 @@ Download the windows binary, image_processor.exe from the repository and add to 
 
 # Linux
 Install the rust toolchain at https://www.rust-lang.org/tools/install
-Clone the directory using git then run cargo ` build --release `
+Clone the directory using git then run ` cargo build --release `
 Then add /target/release to path in your ~/.profile 
 
 
