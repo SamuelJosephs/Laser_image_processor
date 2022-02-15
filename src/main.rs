@@ -1,3 +1,20 @@
+
+use std::path::PathBuf;
+
+use clap::Parser;
+#[derive(Parser,Debug)]
+#[clap(author = "Samuel Josephs", about = "Process's image to exctract coordinates of laser path.\n", long_about = None)]
+struct Args {
+    #[clap(long)]
+    ImageFileName: String,
+    #[clap(long)]
+    RValue: u8,
+    #[clap(long)]
+    OutputFileName:String
+
+}
+
+
 fn main() {
     use image::io::Reader as ImageReader;
     use image::GenericImageView;
@@ -8,20 +25,16 @@ fn main() {
 
 
     // setup
-    
-    let args = env::args().collect::<Vec<String>>();
-    if args.len() < 3 {
-        panic!("Must provide File, RValue options then output file name");
-    }
-    
-    
+
+    let cli = Args::parse();
+    let ImageToOpen = PathBuf::from(cli.ImageFileName);
+    let output_file_name = PathBuf::from(cli.OutputFileName);
+    let RValue = cli.RValue;
     
 
-    let file_path = args[1].clone();
-    let RValue = args[2].parse::<u8>().expect("Not a valid number");
-    let output_file_name = args[3].clone();
+    
 
-    let img = ImageReader::open(file_path).expect("Failed to open file").decode();
+    let img = ImageReader::open(ImageToOpen).expect("Failed to open file").decode();
 
     let (width, height) = img.as_ref().unwrap().dimensions();
     println!("width = {}, height = {}",width,height);
