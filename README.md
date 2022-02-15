@@ -7,7 +7,7 @@ This program takes an input image of a red laser (It will not work if it is not 
 Input image:
 ![test](Images/test.jpeg)
 
-Output image:
+Output data:
 ![test_output](Images/graph)
 
 The results are written to Results.csv.
