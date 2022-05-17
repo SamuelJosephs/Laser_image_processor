@@ -32,3 +32,8 @@ Where R_VALUE is an integer between 0 and 255, the higher the numer the more pix
 The results will be written to OUTPUT_FILE_NAME where the first column is the x corrdinates and the y column lists the y coordinates of the pixels.
 
 For best results you want the image to be mostly dark with a very bright path of the red laser. Ideally you would crop the image such that the glass tank was the only thing that is visible, this will avoid noise and allow pixel coordinates to be converted into real distances, e.g for a tank that is 10 meters long, with 2000 pixels along the x axis, an x coordinate of 100 corrisponds to a physical distance of 100/200 * 10 meters along the x axis if the image is cropped appropriatly and parralax is minnimal.
+
+
+
+This program was used to write the following report.
+![report][RLI_Version_2.pdf]
