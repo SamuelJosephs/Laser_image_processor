@@ -35,5 +35,4 @@ For best results you want the image to be mostly dark with a very bright path of
 
 
 
-This program was used to write the following report.
-![report][RLI_Version_2.pdf]
+This program was used to write a report that can be found [here](/RLI_Version_2.pdf).
